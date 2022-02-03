@@ -1,0 +1,22 @@
+<h2 class="income-data-edit-heading mt-4">変動費科目　データ修正 </h2>
+ 
+		<%= form_for @variablecost_value do |form| %>
+		<table class="table col-md-10">
+			<tr>
+				<th>登録日</th>
+		    <th>名称</th>
+		    <th>値</th>
+		    <th>備考</th>
+		  </tr>
+ 
+		 <tr>
+			 <td><%= form.date_select :year_month,
+	 						start_year: 2010, end_year: Time.current.year,
+	 						use_month_numbers: true, discard_day: true %></td>
+			 <th><%= @variablecost.name %></th>
+	 		 <td><%= form.text_field :value, class: "form-control" %></td>
+	 		 <td><%= form.text_field :description, class: "form-control" %></td>
+		 </tr>
+		</table>
+		<div><%= form.submit "更新", class: "btn btn-success" %></div>
+		<% end %>

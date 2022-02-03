@@ -1,0 +1,20 @@
+<div class="container">
+<h2 class="month-confirm-heading mt-4">月次収支確認</h2>
+
+<%= form_tag({controller: :balance_confirm, action: :show}, {method: :post}) do %>
+    <input type="month" name="year_month" class="form-control col-3">
+    <input type="submit" class="btn btn-primary mt-2">
+<% end %>
+
+<h2 class="year-confirm-heading mt-4">年間収支確認</h2>
+<%= form_tag({controller: :balance_confirm, action: :show_year}, {method: :post}) do %>
+	<input type="hidden" name="year">
+		<select name="year" class="form-select col-2">
+ 			<% 2010.upto(2050) do |n| %>
+				<option value=<%= n.to_s %>><%= n %></option>
+			<% end %>
+		</select>
+	<input type="submit" class="btn btn-primary mt-2">
+<% end %>
+</div>
+

@@ -1,0 +1,16 @@
+<h2 class="income-show-heading mt-4">収入科目の詳細</h2>
+
+<%= link_to "編集", [:edit, @income], class: "btn btn-primary" %>
+<%= link_to "収入科目一覧に戻る", :incomes, class: "btn btn-primary" %>
+
+<table class="table table-hover col-md-6">
+    <tr>
+    <th>名称</th>
+    <td><%= @income.name %></td>
+    </tr>
+
+    <tr>
+    <th>説明</th>
+    <td><%= @income.description %></td>
+    </tr>
+</table>

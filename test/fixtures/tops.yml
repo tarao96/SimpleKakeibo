@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registered_at: 2021-04-19 18:55:10
+  contents: MyText
+  price: 1
+  category: MyString
+  cost_type: MyString
+
+two:
+  registered_at: 2021-04-19 18:55:10
+  contents: MyText
+  price: 1
+  category: MyString
+  cost_type: MyString

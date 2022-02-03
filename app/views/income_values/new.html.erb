@@ -1,0 +1,40 @@
+<% require "date" %>
+
+<% @page_title = "収入科目　データ登録" %>
+<h2 class="income-data-heading mt-4"><%= @page_title %></h2>
+<div class="toolbar"><%= link_to "収入科目データ一覧に戻る", :income_values, class: "btn btn-primary mb-2" %></div>
+<%= form_for(@form, url: income_values_path, method: :post) do |fb| %>
+
+<!-- 年月テーブル -->
+<table class="table col-md-8">
+    <tr>
+        <th>登録年月</th>
+        <th>名称</th>
+        <th>値</th>
+        <th>備考</th>
+    </tr>
+
+    <% cnt = 0 %>
+    <%= fb.fields_for :income_values do |f| %>
+    <%= f.hidden_field :income_id %>
+
+    <tr>
+        <td>
+        <%= f.date_select :year_month, start_year: 2010, end_year: Time.current.year,
+						use_month_numbers: true, discard_day: true, class: "form-control"
+            %>
+        </td>
+
+        <th>
+        <%= @incomes.find(@form.income_values[cnt].income_id).name %>
+        </th>
+        <% cnt += 1 %>
+        <td><%= f.text_field :value, size: 8, class: "form-control" %></td>
+        <td><%= f.text_field :description, size: 8, class: "form-control" %></td>
+
+    </tr>
+    <% end %>
+</table>
+
+<div><%= fb.submit '一括登録', class: "btn btn-success mt-2" %></div>
+<% end %>

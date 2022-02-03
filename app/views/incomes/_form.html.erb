@@ -1,0 +1,11 @@
+<%= link_to "収入科目一覧に戻る", :incomes, class: "btn btn-primary mb-3" %>
+<table class="table">
+    <tr>
+        <th><%= form.label :name, "名称" %></th>
+        <td><%= form.text_field :name, class: "form-control" %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :description, "説明" %></th>
+        <td><%= form.text_field :description, class: "form-control" %></td>
+    </tr>
+</table>

@@ -1,0 +1,5 @@
+<h2 class="my-4">固定費科目</h2>
+<%= form_for @fixedcost do |form| %>
+    <%= render "form", form: form %>
+    <div><%= form.submit "登録", class: "btn btn-success" %></div>
+<% end %>
